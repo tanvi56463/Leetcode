@@ -1,4 +1,4 @@
-​class Solution {
+class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         if(nums.size() == 0) return 0;
@@ -14,6 +14,9 @@ public:
                 cntCurr = 1;
                 last_smaller = nums[i];
                 
+            }
+            else{
+                continue; //arr[i]==last_smalletr
             }
             longest = max(longest,cntCurr);
         }
