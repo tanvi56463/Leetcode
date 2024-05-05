@@ -15,6 +15,9 @@ public:
                 last_smaller = nums[i];
                 
             }
+            else{
+                continue; //arr[i]==last_smalletr
+            }
             longest = max(longest,cntCurr);
         }
         return longest;
