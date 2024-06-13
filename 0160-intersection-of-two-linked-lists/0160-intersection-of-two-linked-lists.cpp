@@ -19,6 +19,9 @@ public:
         a=a->next;
         b=b->next;
     }
+    if(a->next==0 && b->next==0 && a!=b){
+        return 0; // no intersection in LL
+    }   
     if(a->next==0){
         // B LL is bigger
         // find how big B is
