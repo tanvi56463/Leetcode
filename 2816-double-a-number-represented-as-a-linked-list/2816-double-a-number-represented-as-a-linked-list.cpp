@@ -28,3 +28,6 @@ public:
         return head;
     }
 };
+
+//TC=o(n)
+//SC=o(n) >> RE
