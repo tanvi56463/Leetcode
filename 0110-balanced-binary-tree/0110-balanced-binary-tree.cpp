@@ -11,40 +11,60 @@
  */
 class Solution {
 public:
-    int height(TreeNode* root) {
-        if(root == NULL){
-            return 0;
-        }
-        int leftHeight = height(root->left);
-        int rightHeight = height(root->right);
-        int finalAns = max(leftHeight,rightHeight)+1;
-        return finalAns;
+//     int height(TreeNode* root) {
+//         if(root == NULL){
+//             return 0;
+//         }
+//         int leftHeight = height(root->left);
+//         int rightHeight = height(root->right);
+//         int finalAns = max(leftHeight,rightHeight)+1;
+//         return finalAns;
         
-    }
-    bool isBalanced(TreeNode* root){
-        //BC
-        if(root == NULL){
-            return true;
-        }
+//     }
+//     bool isBalanced(TreeNode* root){
+//         //BC
+//         if(root == NULL){
+//             return true;
+//         }
         
-        //curr node->solve
-        int leftHeight = height(root->left);
-        int rightHeight = height(root->right);
-        int finalAns = max(leftHeight,rightHeight);
-        int diff = abs(leftHeight-rightHeight);
+//         //curr node->solve
+//         int leftHeight = height(root->left);
+//         int rightHeight = height(root->right);
+//         int finalAns = max(leftHeight,rightHeight);
+//         int diff = abs(leftHeight-rightHeight);
         
         
-        bool currnodeAns = (diff<=1);
+//         bool currnodeAns = (diff<=1);
         
-        bool LeftAns = isBalanced(root->left);
-        bool rightAns = isBalanced(root->right);
+//         bool LeftAns = isBalanced(root->left);
+//         bool rightAns = isBalanced(root->right);
         
-        if(currnodeAns && LeftAns && rightAns){
-            return true;
+//         if(currnodeAns && LeftAns && rightAns){
+//             return true;
             
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+// };
+
+// //o(n^2)
+    
+        bool isbalanced = true;
+        int height(TreeNode* root){
+            if(!root) return 0;
+            int lh = height(root->left);
+            int rh = height(root->right);
+            
+            //check for curr node is balanced 
+            if(isbalanced && abs(lh-rh) >1){
+                isbalanced = false;
+            }
+              return max(lh,rh)+1;  
         }
-        else{
-            return false;
-        }
+    int isBalanced(TreeNode* root) {
+        height(root);
+        return isbalanced;
     }
 };
