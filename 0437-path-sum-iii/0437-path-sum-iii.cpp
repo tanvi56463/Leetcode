@@ -24,8 +24,8 @@ public:
     int pathSum(TreeNode* root, long long targetSum) {
         if(root){
            pathFromOneRoot(root,targetSum); // fun call for main root
-           pathSum(root->left,targetSum);
-           pathSum(root->right,targetSum);
+           pathSum(root->left,targetSum); // fun call for main root ka left node
+           pathSum(root->right,targetSum); // fun call for main root ka right node
         }
         return ans;
     }
