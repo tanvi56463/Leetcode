@@ -29,15 +29,15 @@ public:
         
         }
         
-        //p left, q right
-        if(p->val < root->val && q->val > root->val){
-          return root;
-        }
+//         //p left, q right
+//         if(p->val < root->val && q->val > root->val){
+//           return root;
+//         }
         
-        //p right, q left
-        if(p->val > root->val && q->val < root->val){
-          return root;
-        }
+//         //p right, q left
+//         if(p->val > root->val && q->val < root->val){
+//           return root;
+//         }
         return root;
     }
 };
